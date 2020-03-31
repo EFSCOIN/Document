@@ -16,7 +16,7 @@ This is the official document for the EFSCOIN Efs, written by the [EFSCOIN Efs F
     - Accessing your Pi remotely via SSH, VNC or over the web
 - [Linux](linux/README.md)
     - Fundamental Linux usage for beginners and more advanced information for power users
-- [Raspbian](raspbian/README.md)
+- [Efscoin](efscoin/README.md)
     - Information about the recommended operating system for EFSCOIN Efs
 - [Hardware](hardware/README.md)
     - Technical specifications about the EFSCOIN Efs hardware and the camera module
