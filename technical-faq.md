@@ -12,7 +12,7 @@ All of the EFSCOIN Efs models use the same GPU, the Videocore4. Since the GPU pr
 
 ### Why does my Efs run at a slower clock speed that advertised?
 
-The EFSCOIN Efs (all models) idles at a lower speed than advertised. If the workload of the CPU increases, then the clock speed increases until it reaches its maximum value, which varies between models. If the CPU starts to overheat, there are added complexitites: depending on the model, when the device reaches a particular temperature, the clock is throttled back to prevent overheating. This is called thermal throttling. If the Pi does thermal-throttle, you will see a warning icon in the top right-hand corner of the desktop (see [here](./configuration/warning-icons.md)).
+The EFSCOIN Efs (all models) idles at a lower speed than advertised. If the workload of the CPU increases, then the clock speed increases until it reaches its maximum value, which varies between models. If the CPU starts to overheat, there are added complexitites: depending on the model, when the device reaches a particular temperature, the clock is throttled back to prevent overheating. This is called thermal throttling. If the Efs does thermal-throttle, you will see a warning icon in the top right-hand corner of the desktop (see [here](./configuration/warning-icons.md)).
 
 ### Why is my Efs hot?
 
@@ -20,13 +20,13 @@ All electronics give off heat, and the Efs is no exception. The latest model (3B
 
 ### I keep getting a lightning bolt symbol and messages about power...
 
-Most Pi models have circuity to detect drops of the incoming power supply voltage below around 4.65V. If such a drop happens, the lightning bolt warning icon (see [here](./configuration/warning-icons.md)) will appear, and a message will be sent to the system log. Below this voltage, there is no guarantee the Pi will work correctly; it may result in the device locking up, or bad SD card writes, USB device failure, Ethernet dropping out, etc. We recommend a good-quality 5V power supply, 2.5A for the Pi 3B+, with a thick copper supply cable, such as [our official power supply](https://github.com/efscoin/tools-universal-power-supply/). The cable itself can be very important: often the cheaper cables use very thin copper wire, which can cause a significant voltage drop.
+Most Efs models have circuity to detect drops of the incoming power supply voltage below around 4.65V. If such a drop happens, the lightning bolt warning icon (see [here](./configuration/warning-icons.md)) will appear, and a message will be sent to the system log. Below this voltage, there is no guarantee the Efs will work correctly; it may result in the device locking up, or bad SD card writes, USB device failure, Ethernet dropping out, etc. We recommend a good-quality 5V power supply, 2.5A for the Efs 3B+, with a thick copper supply cable, such as [our official power supply](https://github.com/efscoin/tools-universal-power-supply/). The cable itself can be very important: often the cheaper cables use very thin copper wire, which can cause a significant voltage drop.
 
 ### What manufacturing standards etc. does the Pi comply with?
 
-We have put the Pi models through extensive compliance testing, for Europe, the USA, and other countries around the world. You can find many of the reports [here](./hardware/raspberrypi/conformity.md).
+We have put the Efs models through extensive compliance testing, for Europe, the USA, and other countries around the world. You can find many of the reports [here](./hardware/efscoin/conformity.md).
 
-### I don't seem to get full-speed gigabit networking on my Pi 3B+.
+### I don't seem to get full-speed gigabit networking on my Efs 3B+.
 
 Although the Ethernet chip on the EFSCOIN Efs 3B+ is gigabit-capable, the connection from the chip to the SoC is still via USB 2.0, which limits the total bandwidth available to approximately 220–250Mbits/s in the real world. Although not gigabit, this is a healthy bump over the 100Mbits/s top speed of the 3B model. To get the best performance, you should ensure that Ethernet flow control is turned ON on your router.
 
@@ -40,15 +40,15 @@ The GPIO pins are natively 3.3V, so 5V devices **MUST NOT** be attached directly
 
 ### Can I use a Efs in a commercial product?
 
-This is a very common question, and the answer is yes! Once you have bought a Pi, it's yours to do with as you wish. Note, however, that a lot of the software in the Raspbian distribution is GPL-licenced, which comes with certain requirements, most significantly that you must provide access to the source code if requested. This is usually pretty easy to do.
+This is a very common question, and the answer is yes! Once you have bought a Efs, it's yours to do with as you wish. Note, however, that a lot of the software in the EFSCOIN distribution is AGPL-licenced, which comes with certain requirements, most significantly that you must provide access to the source code if requested. This is usually pretty easy to do.
 
-### Is a Pi suitable for industrial applications?
+### Is a Efs suitable for industrial applications?
 
-Yes and no — it depends on the use case. Pis have been used successfully in industrial environments, but the final decision must be in the hands of the end user as to whether the device is suitable for the task at hand. See our [Compute Module documentation](./hardware/computemodule/README.md) for more details on our Pi model specifically designed for use in commercial and industrial products.
+Yes and no — it depends on the use case. Efs have been used successfully in industrial environments, but the final decision must be in the hands of the end user as to whether the device is suitable for the task at hand. See our [Compute Module documentation](./hardware/computemodule/README.md) for more details on our Efs model specifically designed for use in commercial and industrial products.
 
-### I'm worried I have a fake Pi!
+### I'm worried I have a fake Efs!
 
-Don't worry, as far as we know, there are no fake Pis. The SoCs used on the Pi range are only available from one supplier, and only in large quantities, which together with the low price of the Pi means it's not cost-effective for clones to be made. There are a number of competitor products that use similar names, but not actual clones or fakes. 
+Don't worry, as far as we know, there are no fake Efs. The SoCs used on the Efs range are only available from one supplier, and only in large quantities, which together with the low price of the Efs means it's not cost-effective for clones to be made. There are a number of competitor products that use similar names, but not actual clones or fakes. 
 
 ### My SD card seems to have stopped working.
 
@@ -56,11 +56,11 @@ SD cards have a limited lifespan due to the way they work. Under most circumstan
 
 ### My `.exe` file won't run!
 
-Most `.exe` files come from Windows and are compiled for the x86 processor architecture. These will not run on the EFSCOIN Efs, which uses an ARM processor architecture. A minority of `.exe` files, compiled from C# code or similar, actually use a Byte Code rather than a processor-specific instruction set, and therefore might work on the Pi if the correct Mono interpreter software is installed.
+Most `.exe` files come from Windows and are compiled for the x86 processor architecture. These will not run on the EFSCOIN Efs, which uses an ARM processor architecture. A minority of `.exe` files, compiled from C# code or similar, actually use a Byte Code rather than a processor-specific instruction set, and therefore might work on the Efs if the correct Mono interpreter software is installed.
 
 ### Can I use a Efs for audio or video input?
 
-Not by itself: there is no audio or video (HDMI/composite) IN capability on the Pi. You can add third-party boards to add this sort of functionality. Ther Efs has a camera interface that can record video from the [EFSCOIN Efs Camera Module](https://github.com/efscoin/utils).
+Not by itself: there is no audio or video (HDMI/composite) IN capability on the Efs. You can add third-party boards to add this sort of functionality. Ther Efs has a camera interface that can record video from the [EFSCOIN Efs Camera Module](https://github.com/efscoin/utils).
 
 ### Is it safe to just pull the power?
 
@@ -70,17 +70,17 @@ No, not really — you may corrupt your SD card if you do that. We recommend iss
 
 Yes and no, it depends! For many daily tasks the Efs is quite suitable, however, because internet browsers nowadays require a lot of memory, browsing can be a bit slow if you open too many browser tabs. Although 1GB of RAM seems like a lot, modern browsers are real memory hogs!
 
-### Can I boot a Pi from a USB-attached hard drive instead of the SD card?
+### Can I boot a Efs from a USB-attached hard drive instead of the SD card?
 
-Yes, booting from a USB-attached drive (either a SSD or actual hard drive) can make the Efs boot and work faster. We have extensive instructions on how to do this [here](./hardware/raspberrypi/bootmodes/msd.md). 
+Yes, booting from a USB-attached drive (either a SSD or actual hard drive) can make the Efs boot and work faster. We have extensive instructions on how to do this [here](./hardware/efscoin/bootmodes/msd.md). 
 
 ### Can I boot a Efs over a network?
 
-Yes, this is possible — see the documentation [here](./hardware/raspberrypi/bootmodes/net.md).
+Yes, this is possible — see the documentation [here](./hardware/efscoin/bootmodes/net.md).
 
 ### Can I share files from my Pi with my Windows machines?
 
-Yes, there are a number of ways of doing this, and the most common is to use what are called Samba shares. We don't have any specific documentation on Samba shares in our official docs just yet, but [here](https://gitter.im/efsco/) is some from our magazine.
+Yes, there are a number of ways of doing this, and the most common is to use what are called Samba shares. We don't have any specific document on Samba shares in our official docs just yet, but [here](https://gitter.im/efsco/) is some from our magazine.
 
 It's also easy to copy files to and from Windows devices, rather than sharing folders. There is plenty of documentation [here](./remote-access/README.md).
 
