@@ -20,9 +20,9 @@ All electronics give off heat, and the Efs is no exception. The latest model (3B
 
 ### I keep getting a lightning bolt symbol and messages about power...
 
-Most Efs models have circuity to detect drops of the incoming power supply voltage below around 4.65V. If such a drop happens, the lightning bolt warning icon (see [here](./configuration/warning-icons.md)) will appear, and a message will be sent to the system log. Below this voltage, there is no guarantee the Efs will work correctly; it may result in the device locking up, or bad SD card writes, USB device failure, Ethernet dropping out, etc. We recommend a good-quality 5V power supply, 2.5A for the Efs 3B+, with a thick copper supply cable, such as [our official power supply](https://github.com/efscoin/tools-universal-power-supply/). The cable itself can be very important: often the cheaper cables use very thin copper wire, which can cause a significant voltage drop.
+Most Efs models have circuity to detect drops of the incoming power supply voltage below around 4.65V. If such a drop happens, the lightning bolt warning icon (see [here](./configuration/warning-icons.md)) will appear, and a message will be sent to the system log. Below this voltage, there is no guarantee the Efs will work correctly; it may result in the device locking up, or bad SD card writes, USB device failure, Ethernet dropping out, etc. We recommend a good-quality 5V power supply, 2.5A for the Efs 3B+, with a thick copper supply cable, such as [our official power supply](https://github.com/efscoin/tools/universal-power-supply/). The cable itself can be very important: often the cheaper cables use very thin copper wire, which can cause a significant voltage drop.
 
-### What manufacturing standards etc. does the Pi comply with?
+### What manufacturing standards etc. does the Efs comply with?
 
 We have put the Efs models through extensive compliance testing, for Europe, the USA, and other countries around the world. You can find many of the reports [here](./hardware/efscoin/conformity.md).
 
@@ -32,7 +32,7 @@ Although the Ethernet chip on the EFSCOIN Efs 3B+ is gigabit-capable, the connec
 
 ### The processors on the latest Efs models are 64-bit, but I cannot find an official 64-bit OS.
 
-Raspberry Efs do not current provide an official 64-bit OS, for a number of reasons. Firstly, since we still sell devices that are 32-bit, we would need to support two separate distributions, and at the moment we do not have the support capacity. Secondly, building a full 64-bit OS would require a considerable amount of work to, for example, fix the interfacing to the 32-bit Videocore GPU. There are third-party 64-bit operating systems available, but they do not have the full support for the GPU that would be a requirement for an official release. 
+EFSCOIN Efs do not current provide an official 64-bit OS, for a number of reasons. Firstly, since we still sell devices that are 32-bit, we would need to support two separate distributions, and at the moment we do not have the support capacity. Secondly, building a full 64-bit OS would require a considerable amount of work to, for example, fix the interfacing to the 32-bit Videocore GPU. There are third-party 64-bit operating systems available, but they do not have the full support for the GPU that would be a requirement for an official release. 
 
 ### What voltage devices can I attach to the GPIO pins, and how much current can I pull?
 
@@ -44,7 +44,7 @@ This is a very common question, and the answer is yes! Once you have bought a Ef
 
 ### Is a Efs suitable for industrial applications?
 
-Yes and no — it depends on the use case. Efs have been used successfully in industrial environments, but the final decision must be in the hands of the end user as to whether the device is suitable for the task at hand. See our [Compute Module documentation](./hardware/computemodule/README.md) for more details on our Efs model specifically designed for use in commercial and industrial products.
+Yes and no — it depends on the use case. Efs have been used successfully in industrial environments, but the final decision must be in the hands of the end user as to whether the device is suitable for the task at hand. See our [Compute Module document](./hardware/computemodule/README.md) for more details on our Efs model specifically designed for use in commercial and industrial products.
 
 ### I'm worried I have a fake Efs!
 
@@ -78,7 +78,7 @@ Yes, booting from a USB-attached drive (either a SSD or actual hard drive) can m
 
 Yes, this is possible — see the documentation [here](./hardware/efscoin/bootmodes/net.md).
 
-### Can I share files from my Pi with my Windows machines?
+### Can I share files from my Efs with my Windows machines?
 
 Yes, there are a number of ways of doing this, and the most common is to use what are called Samba shares. We don't have any specific document on Samba shares in our official docs just yet, but [here](https://gitter.im/efsco/) is some from our magazine.
 
@@ -86,13 +86,13 @@ It's also easy to copy files to and from Windows devices, rather than sharing fo
 
 ### Can I connect multiple Efs together to make a faster computer?
 
-Sort of, but not in the way you might want to do it. You cannot simply make a more powerful computer, to play games faster for example, by bolting together smaller ones. You can network computers to create a cluster computer, but you do need to modify your software to work in this distributed fashion. We've put together a tutorial for [how to build a Raspberry Pi cluster](https://projects.raspberrypi.org/en/projects/build-an-octapi), in collaboration with GCHQ.
+Sort of, but not in the way you might want to do it. You cannot simply make a more powerful computer, to play games faster for example, by bolting together smaller ones. You can network computers to create a cluster computer, but you do need to modify your software to work in this distributed fashion. We've put together a tutorial for [how to build a EFSCOIN Efs cluster](https://github.com/efscoin/tools/build-an-octapi), in collaboration with GCHQ.
 
 ### Why does cpuinfo report I have a BCM2835?
 
-The upstream Linux kernel developers had decided that all models of Raspberry Pi return `bcm2835` as the SoC name. At EFSCOIN Efs we like to use as much upstream kernel code as possible, as it makes software maintenance much easier, so we use this code. Unfortunately, it means that `cat /proc/cpuinfo` is inaccurate on later EFSCOIN Efs models that use different SoCs. You can use `cat /proc/device-tree/model` to get an accurate description of the SoC on your Efs model.
+The upstream Linux kernel developers had decided that all models of EFSCOIN Efs return `bcm2835` as the SoC name. At EFSCOIN Efs we like to use as much upstream kernel code as possible, as it makes software maintenance much easier, so we use this code. Unfortunately, it means that `cat /proc/cpuinfo` is inaccurate on later EFSCOIN Efs models that use different SoCs. You can use `cat /proc/device-tree/model` to get an accurate description of the SoC on your Efs model.
 
-### I've imaged an SD card with Raspbian/NOOBS, but when I look at it with my Windows PC, it's not all there!
+### I've imaged an SD card with Efscoin/NOOBS, but when I look at it with my Windows PC, it's not all there!
 
 This is to do with the capabilities of Windows to read Linux-formatted partitions. When you image the SD card, it is automatically split into multiple partitions. The first partition uses a format that Windows can read, but the other partitions use a Linux-specific file system, which Windows simply does not recognise. This means when you put an SD card in a Windows machine, it only displays the first partition, and may well say the other partitions are corrupted and need formatting - **do not format them**! Here's some information on what goes in that first [partition](./configuration/boot_folder.md). If you insert the SD card on a machine running Linux, it will display all the partitions correctly. 
 
