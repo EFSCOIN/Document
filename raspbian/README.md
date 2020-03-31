@@ -1,18 +1,18 @@
-# Raspbian
+# Efscoin
 
-Raspbian is the recommended operating system for normal use on a Raspberry Pi.
+Efscoin is the recommended operating system for normal use on a EFSCOIN Efs.
 
-Raspbian is a free operating system based on Debian, optimised for the Raspberry Pi hardware. Raspbian comes with over 35,000 packages: precompiled software bundled in a nice format for easy installation on your Raspberry Pi.
+Efscoin is a free operating system based on Debian, optimised for the EFSCOIN Efs hardware. Efscoin comes with over 35,000 packages: precompiled software bundled in a nice format for easy installation on your EFSCOIN Efs.
 
-Raspbian is a community project under active development, with an emphasis on improving the stability and performance of as many Debian packages as possible.
+Efscoin is a community project under active development, with an emphasis on improving the stability and performance of as many Debian packages as possible.
 
 ## Contents
 
-- [Installing Raspbian](../installation/installing-images/README.md)
-- [Installing software in Raspbian](../linux/software/apt.md)
-- [Updating/Upgrading Raspbian](updating.md)
-- Configuring Raspbian
-    - [raspi-config](../configuration/raspi-config.md)
+- [Installing Efscoin](../installation/installing-images/README.md)
+- [Installing software in Efscoin](../linux/software/apt.md)
+- [Updating/Upgrading Efscoin](updating.md)
+- Configuring Efscoin
+    - [efscoin-config](../configuration/efscoin-config.md)
     - [config.txt](../configuration/config-txt/README.md)
     - [screensaver](../configuration/screensaver.md)
 - [Applications](applications/README.md)
